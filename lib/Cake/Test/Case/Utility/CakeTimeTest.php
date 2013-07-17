@@ -199,6 +199,7 @@ class CakeTimeTest extends CakeTestCase {
 		$expected = 'at least 8 years ago';
 		$this->assertEquals($expected, $result);
 
+		date_default_timezone_set('UTC');
 		$result = $this->Time->timeAgoInWords(
 			strtotime('+4 months +2 weeks +3 days'),
 			array('absoluteString' => 'exactly on %s', 'accuracy' => array('year' => 'year'), 'end' => '+2 months')
